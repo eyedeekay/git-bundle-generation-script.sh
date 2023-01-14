@@ -1,0 +1,190 @@
+<html>
+  <head>
+    <title>
+      git-bundle-gener...
+    </title>
+    <meta name="author" content="eyedeekay" />
+    <meta name="description" content="git-bundle-generation-script.sh" />
+    <meta name="keywords" content="main" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="showhider.css" />
+  </head>
+  <body>
+    <div id="navbar">
+      <a href="#shownav">
+        Show navigation
+      </a>
+      <div id="shownav">
+        <div id="hidenav">
+          <ul>
+            <li>
+              <a href="..">
+                Up one level ^
+              </a>
+            </li>
+            <li>
+              <a href="index.html">
+                index
+              </a>
+            </li>
+            <li>
+              <a href="TORRENTS.html">
+                TORRENTS
+              </a>
+            </li>
+            <li>
+              <a href="help.html">
+                help.html
+              </a>
+            </li>
+            <li>
+              <a href="torrents/index.html">
+                torrents/index.html
+              </a>
+            </li>
+          </ul>
+          <br>
+          <a href="#hidenav">
+            Hide Navigation
+          </a>
+        </div>
+      </div>
+    </div>
+    <a id="returnhome" href="/">
+      /
+    </a>
+    <h1>
+      git-bundle-generation-script.sh
+    </h1>
+    <p>
+      Generate git bundles of every I2P tag automatically.
+    </p>
+    <ul>
+      <li>
+        <strong>
+          <a href="TORRENTS.html">
+            Torrents Listing
+          </a>
+        </strong>
+      </li>
+    </ul>
+    <p>
+      To use the
+      <code>
+        generate.sh
+      </code>
+      script to create torrents of every possible I2P git bundle,
+      first, install all the I2P build dependencies.
+    </p>
+    <p>
+      On Debian or Ubuntu, use:
+    </p>
+    <pre><code class="language-sh">sudo apt-get install debhelper ant debconf default-jdk gettext libgmp-dev po-debconf fakeroot \
+  build-essential quilt dh-apparmor libservice-wrapper-java libjson-simple-java \
+  devscripts libjetty9-java libtomcat9-java libtaglibs-standard-jstlel-java libgetopt-java git
+</code></pre>
+    <p>
+      Then check out this repository to the
+      <code>
+        docroot
+      </code>
+      of your
+      <code>
+        zzzot
+      </code>
+      installation.
+      Run the
+      <code>
+        generate.sh
+      </code>
+      script to create the torrents.
+      Re-run the
+      <code>
+        generate.sh
+      </code>
+      script to create new torrents, as-needed.
+      It is designed so it can be used as a cron job by a user with I2P and
+      <code>
+        zzzot
+      </code>
+      installed.
+    </p>
+    <p>
+      <strong>
+        To make every torrent also have a webseed, set a
+        <code>
+          HOST
+        </code>
+        environment variable containing the URL(base32 form) of your zzzot instance.
+      </strong>
+      <strong>
+        Without a trailing slash.
+      </strong>
+      For example:
+    </p>
+    <pre><code class="language-sh">export HOST=http://ae5rbez5qu54o3lt7iczg56bmwvicpymj7al2riuhvogdllz554q.b32.i2p
+</code></pre>
+    <p>
+      To automatically download the latest git bundle using I2P, create the following script:
+    </p>
+    <pre><code class="language-sh">TODO
+</code></pre>
+    <div id="sourcecode">
+      <span id="sourcehead">
+        <strong>
+          Get the source code:
+        </strong>
+      </span>
+      <ul>
+        <li>
+          <a href="https://github.com/eyedeekay/git-bundle-generation-script.sh.git">
+            Source Repository: (https://github.com/eyedeekay/git-bundle-generation-script.sh.git)
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <a href="#show">
+        Show license
+      </a>
+      <div id="show">
+        <div id="hide">
+          <pre><code>MIT License
+
+Copyright (c) 2023 idk
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</code></pre>
+          <a href="#hide">
+            Hide license
+          </a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>
+      <a href="https://geti2p.net/">
+        <img src="i2plogo.png"></img>
+        I2P
+      </a>
+    </div>
+  </body>
+</html>
