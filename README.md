@@ -64,4 +64,4 @@ export https_proxy=http://localhost:4444
 wget -O "$I2PSNARK/i2p.i2p.trunk.bundle.torrent" "$HOST/torrents/i2p.i2p.trunk.bundle.torrent"
 ```
 
-and run it as a cron job too. You can download it [here](http://ae5rbez5qu54o3lt7iczg56bmwvicpymj7al2riuhvogdllz554q.b32.i2p/peer.sh).
+and run it as a cron job too. You can download it [here](peer.sh).
