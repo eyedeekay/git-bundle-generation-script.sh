@@ -61,11 +61,11 @@ mki2ptorrent() {
             $WEBSEED_URL \
             "$1"
         echo $WEBSEED_URL | sed 's|-w|Webseed:    |g'
-    else java \
+    else
+        java \
             -cp "$DIR/i2p.i2p/build/i2p.jar:$DIR/i2p.i2p/build/i2psnark.jar" \
             "org.klomp.snark.MetaInfo" \
             "$1.torrent"
-        echo $WEBSEED_URL | sed 's|-w|Webseed:    |g'
     fi
 }
 
