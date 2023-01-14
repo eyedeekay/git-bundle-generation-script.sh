@@ -20,6 +20,14 @@ Run the `generate.sh` script to create the torrents.
 Re-run the `generate.sh` script to create new torrents, as-needed.
 It is designed so it can be used as a cron job by a user with I2P and `zzzot` installed.
 
+**To make every torrent also have a webseed, set a `HOST` environment variable containing the URL(base32 form) of your zzzot instance.**
+**Without a trailing slash.**
+For example:
+
+```sh
+export HOST=http://ae5rbez5qu54o3lt7iczg56bmwvicpymj7al2riuhvogdllz554q.b32.i2p
+```
+
 To automatically download the latest git bundle using I2P, create the following script:
 
 ```sh
