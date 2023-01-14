@@ -8,7 +8,7 @@ Trunk
 
 This torrent contains all branches, tags, and checkins as of Sat Jan 14 02:32:16 AM UTC 2023
 
- - [i2p.i2p.trunk.bundle](/torrents/i2p.i2p.trunk.bundle)
+ - [Sat Jan 14 02:32:16 AM UTC 2023 i2p.i2p.trunk.bundle](/torrents/i2p.i2p.trunk.bundle)
 ```
 
 Created:     i2p.i2p.trunk.bundle.torrent
