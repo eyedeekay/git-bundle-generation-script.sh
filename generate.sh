@@ -1,5 +1,7 @@
 #! /usr/bin/env sh
 
+DATE=$(date)
+
 DIR=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 cd "$DIR"
 
@@ -68,8 +70,6 @@ mki2ptorrent() {
             "$1.torrent"
     fi
 }
-
-DATE=$(date)
 
 echo "I2P Git Bundles" | tee "$DIR/TORRENTS.md"
 echo "===============" | tee -a "$DIR/TORRENTS.md"
