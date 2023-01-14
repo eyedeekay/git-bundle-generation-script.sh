@@ -21,9 +21,25 @@ if [ ! -f "$BUNDLE" ]; then
     ant git-bundle 
 fi
 
+if [ -z "$I2PSNARK" ]; then
+    I2PSNARK="$HOME/.i2p/i2psnark"
+fi
+
+if [ ! -d "$HOME/.i2p/i2psnark" ]; then
+    if [ -d "$HOME/i2p/i2psnark" ]; then
+        I2PSNARK="$HOME/i2p/i2psnark"
+    fi
+fi
+
+if [ -z "$I2PSNARK" ]; then
+    echo "I2PSnark directory not found"
+    exit 1
+fi
+
 rm -f "$DIR/torrents/i2p.i2p.trunk.bundle"
 git bundle create "$DIR/torrents/i2p.i2p.trunk.bundle" "master" --all --tags --branches
 
+cp -v "$DIR/torrents/i2p.i2p.trunk.bundle"* "$I2PSNARK"
 
 cd "$DIR/torrents" || exit 1
 
