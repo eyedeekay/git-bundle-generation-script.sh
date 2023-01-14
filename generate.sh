@@ -79,5 +79,5 @@ for bundle in *.bundle; do
     mki2ptorrent "$bundle" | tee -a "$DIR/TORRENTS.md"
     echo '```' | tee -a "$DIR/TORRENTS.md"
 done
-
+mv i2p.i2p ..
 edgar
