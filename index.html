@@ -84,7 +84,8 @@
     <p>
       On Debian or Ubuntu, use:
     </p>
-    <pre><code class="language-sh">sudo apt-get install debhelper ant debconf default-jdk gettext libgmp-dev po-debconf fakeroot \
+    <pre><code class="language-sh">
+sudo apt-get install debhelper ant debconf default-jdk gettext libgmp-dev po-debconf fakeroot \
   build-essential quilt dh-apparmor libservice-wrapper-java libjson-simple-java \
   devscripts libjetty9-java libtomcat9-java libtaglibs-standard-jstlel-java libgetopt-java git
 </code></pre>
@@ -127,13 +128,45 @@
       </strong>
       For example:
     </p>
-    <pre><code class="language-sh">export HOST=http://ae5rbez5qu54o3lt7iczg56bmwvicpymj7al2riuhvogdllz554q.b32.i2p
+    <pre><code class="language-sh">
+export HOST=http://ae5rbez5qu54o3lt7iczg56bmwvicpymj7al2riuhvogdllz554q.b32.i2p
 </code></pre>
     <p>
       To automatically download the latest git bundle using I2P, create the following script:
     </p>
-    <pre><code class="language-sh">TODO
+    <pre><code class="language-sh">
+#! /usr/bin/env sh
+
+DIR=$( cd -P -- &quot;$(dirname -- &quot;$(command -v -- &quot;$0&quot;)&quot;)&quot; &amp;&amp; pwd -P )
+
+if [ -z &quot;$I2PSNARK&quot; ]; then
+    I2PSNARK=&quot;$HOME/.i2p/i2psnark&quot;
+fi
+
+if [ ! -d &quot;$HOME/.i2p/i2psnark&quot; ]; then
+    if [ -d &quot;$HOME/i2p/i2psnark&quot; ]; then
+        I2PSNARK=&quot;$HOME/i2p/i2psnark&quot;
+    fi
+fi
+
+if [ -z &quot;$I2PSNARK&quot; ]; then
+    echo &quot;I2PSnark directory not found&quot;
+    exit 1
+fi
+
+if [ -z &quot;$HOST&quot; ]; then
+    HOST=&quot;http://ae5rbez5qu54o3lt7iczg56bmwvicpymj7al2riuhvogdllz554q.b32.i2p&quot;
+fi
+
+rm -f &quot;$I2PSNARK/i2p.i2p.trunk.bundle.torrent.bak&quot; 
+mv &quot;$I2PSNARK/i2p.i2p.trunk.bundle&quot; &quot;$I2PSNARK/i2p.i2p.trunk.bundle.bak&quot;; true
+export http_proxy=http://localhost:4444
+export https_proxy=http://localhost:4444
+wget -O &quot;$I2PSNARK/i2p.i2p.trunk.bundle.torrent&quot; &quot;$HOST/torrents/i2p.i2p.trunk.bundle.torrent&quot;
 </code></pre>
+    <p>
+      and run it as a cron job too.
+    </p>
     <div id="sourcecode">
       <span id="sourcehead">
         <strong>
