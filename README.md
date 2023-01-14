@@ -2,7 +2,7 @@
 
 Generate git bundles of every I2P tag automatically.
 
- - **[Directory Listing](/torrents)**
+ - **[Torrents Listing](TORRENTS.html)**
 
 To use this script, first, install all the I2P build dependencies.
 On Debian or Ubuntu, use:
