@@ -51,15 +51,17 @@ mki2ptorrent() {
         fname=$(basename $1)
         WEBSEED_URL="-w $HOST/torrents/$fname"
     fi
-    java \
-        -cp "$DIR/i2p.i2p/build/i2p.jar:$DIR/i2p.i2p/build/i2psnark.jar" \
-        "org.klomp.snark.Storage" \
-        -a "http://w7tpbzncbcocrqtwwm3nezhnnsw4ozadvi2hmvzdhrqzfxfum7wa.b32.i2p/a" \
-        -c "$(whoami)" \
-        -m "torrent for version $1" \
-        $WEBSEED_URL \
-        "$1"
-    echo $WEBSEED_URL | sed 's|-w|Webseed:    |g'
+    if [ ! -f "$1.torrent" ]; then
+        java \
+            -cp "$DIR/i2p.i2p/build/i2p.jar:$DIR/i2p.i2p/build/i2psnark.jar" \
+            "org.klomp.snark.Storage" \
+            -a "http://w7tpbzncbcocrqtwwm3nezhnnsw4ozadvi2hmvzdhrqzfxfum7wa.b32.i2p/a" \
+            -c "$(whoami)" \
+            -m "torrent for version $1" \
+            $WEBSEED_URL \
+            "$1"
+        echo $WEBSEED_URL | sed 's|-w|Webseed:    |g'
+    fi
 }
 
 DATE=$(date)
